@@ -4,9 +4,11 @@
     {
         AlwaysSaysTrue,
         AlwaysSaysFalse,
-        XStatementIsFalse,
-        XStatementIsTrue,
+        XStatementsIsFalse,
+        XStatementsIsTrue,
         Xof3StatementsIsCorrect,
+        NumberXStatementIsFalse,
+        NumberXStatementIsTrue,
         None
     }
 }

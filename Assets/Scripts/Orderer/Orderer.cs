@@ -28,6 +28,7 @@ namespace Orderer
             }
             FillTargetChooseType(statements, person);
             FillOrdererStatementChanges(statements, person);
+            FillOrdererIntStruct(statements, person);
         }
 
         private Statement GetTrueFalseStatement(StatementType statementType, Person person, float probabilityTrue)
@@ -91,121 +92,45 @@ namespace Orderer
 
         private void FillOrdererIntStruct(IList<Statement> statements, Person person)
         {
-            
+            var counter = statements.Sum(statement => statement.IsTrueForPerson(person) ? 1 : 0);
+
+            switch (counter)
+            {
+                case 0 :
+                    ordererIntStruct.OrderStatementType = OrderStatementType.AlwaysSaysFalse;
+                    break;
+                case 1 :
+                    var random = Random.Range(0f, 1f);
+                    if (random <= 0.5f)
+                    {
+                        ordererIntStruct.OrderStatementType = OrderStatementType.NumberXStatementIsTrue;
+                        ordererIntStruct.X = statements.IndexOf(statements.First(x => x.IsTrueForPerson(person)));
+                    }
+                    else
+                    {
+                        ordererIntStruct.OrderStatementType = OrderStatementType.Xof3StatementsIsCorrect;
+                        ordererIntStruct.X = 1;
+                    }
+
+                    break;
+                case 2 :
+                    var random2 = Random.Range(0f, 1f);
+                    if (random2 <= 0.5f)
+                    {
+                        ordererIntStruct.OrderStatementType = OrderStatementType.NumberXStatementIsFalse;
+                        ordererIntStruct.X = statements.IndexOf(statements.First(x => !x.IsTrueForPerson(person)));
+                    }
+                    else
+                    {
+                        ordererIntStruct.OrderStatementType = OrderStatementType.Xof3StatementsIsCorrect;
+                        ordererIntStruct.X = 2;
+                    }
+                    break;
+                case 3 :
+                    ordererIntStruct.OrderStatementType = OrderStatementType.AlwaysSaysTrue;
+                    break;
+            }
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        // private void ApplyStatementChange(OrdererStatementChangesClass ordererStatementChanges, IEnumerable<Statement> statements)
-        // {
-        //     foreach (var statement in statements)
-        //     {
-        //         if (statement.CanApplyChangingType(ordererStatementChanges.Type, ordererStatementChanges.XValue))
-        //         {
-        //             statement.ApplyChangingType(ordererStatementChanges.Type, ordererStatementChanges.XValue, ordererStatementChanges.YValue)
-        //         }
-        //     }
-        // }
-        //
-        // private OrdererIntStruct ApplyStatementLogicAndReturnOrderIntStruct(OrdererIntStruct ordererIntStruct, IEnumerable<Statement> statements, Person person)
-        // {
-        //     switch (ordererIntStruct.OrderStatementType)
-        //     {
-        //         case OrderStatementType.AlwaysSaysTrue:
-        //             return AlwaysSaysTrue(ordererIntStruct, statements, person);
-        //         case OrderStatementType.AlwaysSaysFalse:
-        //             return AlwaysSaysFalse(ordererIntStruct, statements, person);
-        //         case OrderStatementType.XStatementIsFalse:
-        //             return XStatementIsFalse(ordererIntStruct, statements.ToList(), person);
-        //         case OrderStatementType.XStatementIsTrue:
-        //             return XStatementIsTrue(ordererIntStruct, statements.ToList(), person);
-        //         case OrderStatementType.Xof3StatementsIsCorrect:
-        //             return Xof3StatementsIsCorrect(ordererIntStruct, statements, person);
-        //         default:
-        //             throw new ArgumentOutOfRangeException();
-        //     }
-        // }
-
-        // private OrdererIntStruct AlwaysSaysTrue(OrdererIntStruct ordererIntStruct, IEnumerable<Statement> statements, Person person)
-        // {
-        //     if (statements.All(st => st.IsTrueForPerson(person)))
-        //         return ordererIntStruct;
-        //     ordererIntStruct.OrderStatementType = OrderStatementType.None;
-        //     return ordererIntStruct;
-        // }
-        //
-        // private OrdererIntStruct AlwaysSaysFalse(OrdererIntStruct ordererIntStruct, IEnumerable<Statement> statements, Person person)
-        // {
-        //     foreach (var statement in statements)
-        //     {
-        //         if (statement.IsTrueForPerson(person))
-        //         {
-        //             statement.SetFalse(person);
-        //         }
-        //     }
-        //
-        //     return ordererIntStruct;
-        // }
-        //
-        // private OrdererIntStruct XStatementIsFalse(OrdererIntStruct ordererIntStruct, List<Statement> statements, Person person)
-        // {
-        //     for (int i = 0; i < statements.Count; i++)
-        //     {
-        //         var st = statements[i];
-        //         if (st.IsTrueForPerson(person)) continue;
-        //         ordererIntStruct.X = i;
-        //         return ordererIntStruct;
-        //     }
-        //     statements[ordererIntStruct.X].SetFalse(person);
-        //     return ordererIntStruct;
-        // }
-        //
-        // private OrdererIntStruct XStatementIsTrue(OrdererIntStruct ordererIntStruct, List<Statement> statements, Person person)
-        // {
-        //     for (int i = 0; i < statements.Count; i++)
-        //     {
-        //         var st = statements[i];
-        //         if (st.IsTrueForPerson(person))
-        //         {
-        //             ordererIntStruct.X = i;
-        //             return ordererIntStruct;
-        //         }
-        //     }
-        //     ordererIntStruct.OrderStatementType = OrderStatementType.None;
-        //     return ordererIntStruct;
-        // }
-        //
-        // private OrdererIntStruct Xof3StatementsIsCorrect(OrdererIntStruct ordererIntStruct, IEnumerable<Statement> statements, Person person)
-        // {
-        //     return null;
-        // }
-        
     }
 }
