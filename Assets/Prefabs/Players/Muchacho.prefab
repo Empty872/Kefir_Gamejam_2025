@@ -26,7 +26,7 @@ PrefabInstance:
       objectReference: {fileID: 140191490, guid: bef7e5bc3421a4a44bde13a3f7c75f4b, type: 3}
     - target: {fileID: 1795605669880162628, guid: ae0b73af71b72d44e84e51b8f9512ce6, type: 3}
       propertyPath: m_Name
-      value: Muchacho Variant
+      value: Muchacho
       objectReference: {fileID: 0}
     - target: {fileID: 2840233852630748893, guid: ae0b73af71b72d44e84e51b8f9512ce6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -68,6 +68,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8515463676198176678, guid: ae0b73af71b72d44e84e51b8f9512ce6, type: 3}
+      propertyPath: personData
+      value: 
+      objectReference: {fileID: 11400000, guid: 9c728e911c98ba64daa508ba1382ee6e, type: 2}
     - target: {fileID: 9204282921936956397, guid: ae0b73af71b72d44e84e51b8f9512ce6, type: 3}
       propertyPath: m_Sprite
       value: 

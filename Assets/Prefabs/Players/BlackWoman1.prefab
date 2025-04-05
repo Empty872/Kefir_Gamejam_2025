@@ -26,7 +26,7 @@ PrefabInstance:
       objectReference: {fileID: 45977064, guid: b7dda064302991c4e9ba6e64ff188ce3, type: 3}
     - target: {fileID: 1795605669880162628, guid: ae0b73af71b72d44e84e51b8f9512ce6, type: 3}
       propertyPath: m_Name
-      value: BlackWoman Variant
+      value: BlackWoman1
       objectReference: {fileID: 0}
     - target: {fileID: 2840233852630748893, guid: ae0b73af71b72d44e84e51b8f9512ce6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -68,6 +68,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8515463676198176678, guid: ae0b73af71b72d44e84e51b8f9512ce6, type: 3}
+      propertyPath: personData
+      value: 
+      objectReference: {fileID: 11400000, guid: 3cfdb120e196d3543b05466bcbc10e98, type: 2}
     - target: {fileID: 9204282921936956397, guid: ae0b73af71b72d44e84e51b8f9512ce6, type: 3}
       propertyPath: m_Sprite
       value: 

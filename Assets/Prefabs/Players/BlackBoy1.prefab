@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1795605669880162628, guid: ae0b73af71b72d44e84e51b8f9512ce6, type: 3}
       propertyPath: m_Name
-      value: Player Variant
+      value: BlackBoy1
       objectReference: {fileID: 0}
     - target: {fileID: 2840233852630748893, guid: ae0b73af71b72d44e84e51b8f9512ce6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8515463676198176678, guid: ae0b73af71b72d44e84e51b8f9512ce6, type: 3}
+      propertyPath: personData
+      value: 
+      objectReference: {fileID: 11400000, guid: cdb787fdc7ab4fa40b2b58f6983c2047, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

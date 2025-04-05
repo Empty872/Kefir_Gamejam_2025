@@ -26,7 +26,7 @@ PrefabInstance:
       objectReference: {fileID: 1807894419, guid: 199a3d02c08dac0479064862dec003b7, type: 3}
     - target: {fileID: 1795605669880162628, guid: ae0b73af71b72d44e84e51b8f9512ce6, type: 3}
       propertyPath: m_Name
-      value: BlackMan1 Variant
+      value: BlackMan1
       objectReference: {fileID: 0}
     - target: {fileID: 2840233852630748893, guid: ae0b73af71b72d44e84e51b8f9512ce6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -68,6 +68,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8515463676198176678, guid: ae0b73af71b72d44e84e51b8f9512ce6, type: 3}
+      propertyPath: personData
+      value: 
+      objectReference: {fileID: 11400000, guid: 5826495cf73643446a754925551adc59, type: 2}
     - target: {fileID: 9204282921936956397, guid: ae0b73af71b72d44e84e51b8f9512ce6, type: 3}
       propertyPath: m_Sprite
       value: 
