@@ -1,0 +1,10 @@
+﻿namespace Charcter
+{
+    public enum HatType
+    {
+        None,
+        Cap,
+        CowboyHat,
+        
+    }
+}
