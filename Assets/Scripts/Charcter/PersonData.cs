@@ -5,6 +5,7 @@ using Random = UnityEngine.Random;
 
 namespace Charcter
 {
+    [CreateAssetMenu(menuName = "ScriptalbeObjects/PersonData")]
     public class PersonData : ScriptableObject
     {
         [SerializeField] private Height height;

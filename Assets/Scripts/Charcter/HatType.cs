@@ -5,6 +5,7 @@
         None,
         Cap,
         CowboyHat,
-        
+        Sunglasses,
+        Glasses
     }
 }
