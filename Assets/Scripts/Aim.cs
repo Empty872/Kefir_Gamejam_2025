@@ -1,12 +1,16 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using AYellowpaper.SerializedCollections;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace DefaultNamespace
 {
     public class Aim : MonoBehaviour
     {
         [SerializeField] private Environment environment;
+        [SerializeField] private Image aimImage;
+        [SerializeField] private AudioSource audioSource;
         private Vector3 shootPositionDelta;
 
         private void OnEnable()
@@ -35,7 +39,6 @@ namespace DefaultNamespace
 
         public void Shoot()
         {
-            Debug.Log(shootPositionDelta + transform.position);
             if (Physics.Raycast(transform.position + shootPositionDelta, transform.forward, out var raycastHit)) ;
             {
                 var targetTransform = raycastHit.transform;
@@ -51,6 +54,19 @@ namespace DefaultNamespace
                 {
                     Debug.Log("There is no person");
                 }
+            }
+            StartCoroutine(ScaleAim());
+            audioSource.Play();
+            enabled = false;
+        }
+
+        private IEnumerator ScaleAim()
+        {
+            var maxHeight = 40000;
+            while (aimImage.rectTransform.sizeDelta.y < maxHeight)
+            {
+                aimImage.rectTransform.sizeDelta *= 1.1f;
+                yield return new WaitForSeconds(0.01f);
             }
         }
     }
