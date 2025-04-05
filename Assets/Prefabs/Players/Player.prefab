@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5449205828806090666}
   - component: {fileID: 8515463676198176678}
   - component: {fileID: 2150223766052463601}
-  - component: {fileID: 562554799063056145}
+  - component: {fileID: 103950328298585521}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41595abca4fc81c43b6874c7e4149e8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  personData: {fileID: 0}
 --- !u!65 &2150223766052463601
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -120,19 +121,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!111 &562554799063056145
-Animation:
+--- !u!114 &103950328298585521
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1795605669880162628}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 48dbebb6c1722cb498b21932ef5ac5b7, type: 2}
-  m_Animations:
-  - {fileID: 0}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f825dcb72ce64f81b01bc18712423f9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 5449205828806090666}
+  sprites:
+  - {fileID: 1704167528, guid: dd65c0af2698f984c921f2bf2e5fbb18, type: 3}
+  - {fileID: 273176268, guid: dd65c0af2698f984c921f2bf2e5fbb18, type: 3}
+  - {fileID: -1005151823, guid: dd65c0af2698f984c921f2bf2e5fbb18, type: 3}
+  - {fileID: -409917033, guid: dd65c0af2698f984c921f2bf2e5fbb18, type: 3}
+  secondsBetweenSprites: 0.25

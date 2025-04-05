@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42d2686e50dc4e668ed375dcc42ffbfd, type: 3}
   m_Name: WhiteGranny1
   m_EditorClassIdentifier: 
-  height: 1
-  hairColor: 1
+  height: 0
+  hairColor: 3
   hatType: 0
   sex: 1
-  upperColor: 7
-  lowerColor: 5
+  upperColor: 5
+  lowerColor: 4
   skinColor: 0
-  age: 0
+  age: 1
