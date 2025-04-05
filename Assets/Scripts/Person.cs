@@ -21,11 +21,22 @@ public class Person : MonoBehaviour
 
     public int GetTrueFalseStatementValue(float probabilityTrue, StatementType statementType)
     {
-        return Random.Range(0, 1) < probabilityTrue ? GetStatementValue(statementType) : GetFalseStatementValue(statementType);
+        return Random.Range(0, 1) < probabilityTrue
+            ? GetStatementValue(statementType)
+            : GetFalseStatementValue(statementType);
     }
-    
+
     public void Die()
     {
+        if (GameController.Instance.Target == this)
+        {
+            Debug.Log("You Win");
+        }
+        else
+        {
+            Debug.Log("You Lose");
+        }
+
         Destroy(gameObject);
     }
 }
