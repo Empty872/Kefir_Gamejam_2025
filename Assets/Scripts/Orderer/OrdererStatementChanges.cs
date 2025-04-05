@@ -7,5 +7,6 @@
         AlwaysChangeClothesColorXtoY,
         AlwaysHigherHeight,
         AlwaysLowerHeight,
+        None
     }
 }

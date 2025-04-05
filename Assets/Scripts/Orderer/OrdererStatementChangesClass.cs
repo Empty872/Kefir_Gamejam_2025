@@ -5,11 +5,11 @@ namespace Orderer
     [System.Serializable]
     public class OrdererStatementChangesClass
     {
-        [SerializeField] private OrdererStatementChanges ordererStatementChanges;
+        [SerializeField] private OrdererStatementChanges type;
         [SerializeField] private int xValue;
         [SerializeField] private int yValue;
 
-        public OrdererStatementChanges OrdererStatementChanges => ordererStatementChanges;
+        public OrdererStatementChanges Type => type;
 
         public int XValue => xValue;
 

@@ -8,6 +8,7 @@
         Green,
         Orange,
         Red,
-        Yellow
+        Yellow,
+        Blue
     }
 }

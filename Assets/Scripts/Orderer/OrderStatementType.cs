@@ -6,7 +6,7 @@
         AlwaysSaysFalse,
         XStatementIsFalse,
         XStatementIsTrue,
-        XofYStatementsIsCorrect,
-        OddStatementsIsCorrect
+        Xof3StatementsIsCorrect,
+        None
     }
 }
