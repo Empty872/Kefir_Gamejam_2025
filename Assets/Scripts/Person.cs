@@ -4,5 +4,8 @@ using UnityEngine;
 
 public class Person : MonoBehaviour
 {
-    
+    public void Die()
+    {
+        Destroy(gameObject);
+    }
 }
