@@ -17,3 +17,5 @@ MonoBehaviour:
   - {fileID: 1322388940915510359, guid: fe78c33a19e3d3141bc565ce72b99bf9, type: 3}
   - {fileID: 1322388940915510359, guid: a23da0721db977d42a0b0cd0d6541b5a, type: 3}
   - {fileID: 1322388940915510359, guid: cda46c1fda71cf44795d8ec86d404395, type: 3}
+  possibleWindSpeeds: fdfffffffeffffffffffffff00000000010000000200000003000000
+  possibleDistances: 320000006400000096000000c8000000
