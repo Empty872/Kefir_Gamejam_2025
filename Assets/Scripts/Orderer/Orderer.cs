@@ -10,9 +10,17 @@ namespace Orderer
     public class Orderer : MonoBehaviour
     {
         private OrderTargetChoseType orderTargetChoseType;
-        private OrdererStatementChangesClass ordererStatementChanges;
-        private OrdererIntStruct ordererIntStruct;
-        private List<Statement> statements;
+        private readonly OrdererStatementChangesClass ordererStatementChanges = new ();
+        private readonly OrdererIntStruct ordererIntStruct = new ();
+        private List<Statement> statements = new ();
+
+        public OrderTargetChoseType OrderTargetChoseType => orderTargetChoseType;
+
+        public OrdererStatementChangesClass OrdererStatementChanges => ordererStatementChanges;
+
+        public OrdererIntStruct OrdererIntStruct => ordererIntStruct;
+
+        public List<Statement> Statements => statements;
 
         private void Awake()
         {
@@ -38,6 +46,7 @@ namespace Orderer
 
         private void FillTargetChooseType(IList<Statement> statements, Person person)
         {
+            orderTargetChoseType = OrderTargetChoseType.Normal;
             foreach (var statement in statements)
             {
                 switch (statement.StatementType)
@@ -59,7 +68,7 @@ namespace Orderer
                     case StatementType.UpperColor:
                         break;
                     case StatementType.SkinColor:
-                        if(Random.Range(0f,1f) < 0.6)
+                        if(Random.Range(0f,1f) < 0.6f)
                             orderTargetChoseType = person.Data.SkinColor == SkinColor.Black
                                 ? orderTargetChoseType = OrderTargetChoseType.OrdererIsRacist
                                 : orderTargetChoseType = OrderTargetChoseType.Normal;
