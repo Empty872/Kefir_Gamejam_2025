@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using DefaultNamespace.UI;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -7,16 +8,16 @@ namespace Orderer
 {
     public class OrderManager : MonoBehaviour
     {
-        [SerializeField] private GameSettings gameSettings;
-
-        [SerializeField] private Orderer orderer1;
-        [SerializeField] private Orderer orderer2;
+        private Orderer orderer1 = new ();
+        private Orderer orderer2 = new ();
+        [SerializeField] private MainUi mainUi;
 
         public void StartGame(Person person)
         {
             var types = GetRandomStatementTypes(6);
             orderer1.FormStatements(types.Take(3), person);
             orderer2.FormStatements(types.Skip(3), person);
+            mainUi.DrawUI(orderer1, orderer2);
         }
 
         private List<StatementType> GetRandomStatementTypes(int amount)

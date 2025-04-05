@@ -21,7 +21,7 @@ public class Person : MonoBehaviour
 
     public int GetTrueFalseStatementValue(float probabilityTrue, StatementType statementType)
     {
-        return Random.Range(0, 1) < probabilityTrue
+        return Random.Range(0, 1f) < probabilityTrue
             ? GetStatementValue(statementType)
             : GetFalseStatementValue(statementType);
     }
