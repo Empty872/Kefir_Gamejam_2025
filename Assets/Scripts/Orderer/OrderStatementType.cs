@@ -4,12 +4,8 @@
     {
         AlwaysSaysTrue,
         AlwaysSaysFalse,
-        RandomStatementIsX,
-        AlwaysChangeHairColorXtoY,
-        AlwaysChangeSkinColorXtoY,
-        AlwaysChangeClothesColorXtoY,
-        AlwaysHigherHeight,
-        AlwaysLowerHeight,
+        XStatementIsFalse,
+        XStatementIsTrue,
         XofYStatementsIsCorrect,
         OddStatementsIsCorrect
     }
