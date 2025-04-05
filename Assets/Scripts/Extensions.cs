@@ -1,18 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
-public class Extensions : MonoBehaviour
+public static class Extensions
 {
-    // Start is called before the first frame update
-    void Start()
+    public static T GetRandomElement<T>(this List<T> enumerable)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        return enumerable[Random.Range(0, enumerable.Count)];
     }
 }
