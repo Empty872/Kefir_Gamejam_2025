@@ -27,48 +27,6 @@ namespace Orderer
             this.value = value;
         }
 
-        public bool CanApplyChangingType(OrdererStatementChanges changesType, int X)
-        {
-            switch (changesType)
-            {
-                case OrdererStatementChanges.AlwaysChangeHairColorXtoY:
-                    return statementType == StatementType.HairColor && value == X;
-                case OrdererStatementChanges.AlwaysChangeSkinColorXtoY:
-                    return statementType == StatementType.SkinColor && value == X;
-                case OrdererStatementChanges.AlwaysChangeClothesColorXtoY:
-                    return (statementType == StatementType.UpperColor || statementType == StatementType.LowerColor) && value == X;
-                case OrdererStatementChanges.AlwaysHigherHeight:
-                    return statementType == StatementType.Height;
-                case OrdererStatementChanges.AlwaysLowerHeight:
-                    return statementType == StatementType.Height;
-                case OrdererStatementChanges.None:
-                    return true;
-                default:
-                    return false;
-            }
-        }
-        
-        public bool ApplyChangingType(OrdererStatementChanges changesType, int X, int Y)
-        {
-            switch (changesType)
-            {
-                case OrdererStatementChanges.AlwaysChangeHairColorXtoY:
-                    return statementType == StatementType.HairColor;
-                case OrdererStatementChanges.AlwaysChangeSkinColorXtoY:
-                    return statementType == StatementType.SkinColor;
-                case OrdererStatementChanges.AlwaysChangeClothesColorXtoY:
-                    return statementType == StatementType.UpperColor || statementType == StatementType.LowerColor;
-                case OrdererStatementChanges.AlwaysHigherHeight:
-                    return statementType == StatementType.Height;
-                case OrdererStatementChanges.AlwaysLowerHeight:
-                    return statementType == StatementType.Height;
-                case OrdererStatementChanges.None:
-                    return true;
-                default:
-                    return false;
-            }
-        }
-
         public bool IsTrueForPerson(Person person)
         {
             return false;

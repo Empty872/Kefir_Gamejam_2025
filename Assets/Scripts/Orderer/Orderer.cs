@@ -27,6 +27,7 @@ namespace Orderer
                 statements.Add(GetTrueFalseStatement(statement, person, 0.5f));
             }
             FillTargetChooseType(statements, person);
+            FillOrdererStatementChanges(statements, person);
         }
 
         private Statement GetTrueFalseStatement(StatementType statementType, Person person, float probabilityTrue)
@@ -76,7 +77,16 @@ namespace Orderer
 
         private void FillOrdererStatementChanges(IList<Statement> statements, Person person)
         {
-            
+            foreach (var statement in statements)
+            {
+                if (!statement.IsTrueForPerson(person) && Random.Range(0f,1f) <= 1f)
+                {
+                    ordererStatementChanges.Type = statement.StatementType;
+                    ordererStatementChanges.XValue = person.GetStatementValue(statement.StatementType);
+                    ordererStatementChanges.YValue = statement.Value;
+                    return;
+                }
+            }
         }
 
         private void FillOrdererIntStruct(IList<Statement> statements, Person person)

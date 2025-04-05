@@ -5,14 +5,26 @@ namespace Orderer
     [System.Serializable]
     public class OrdererStatementChangesClass
     {
-        [SerializeField] private OrdererStatementChanges type;
+        [SerializeField] private StatementType type;
         [SerializeField] private int xValue;
         [SerializeField] private int yValue;
 
-        public OrdererStatementChanges Type => type;
+        public StatementType Type
+        {
+            get => type;
+            set => type = value;
+        }
 
-        public int XValue => xValue;
+        public int XValue
+        {
+            get => xValue;
+            set => xValue = value;
+        }
 
-        public int YValue => yValue;
+        public int YValue
+        {
+            get => yValue;
+            set => yValue = value;
+        }
     }
 }
