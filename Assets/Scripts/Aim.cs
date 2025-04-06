@@ -120,7 +120,7 @@ namespace DefaultNamespace
                 }
                 else if (targetTransform.TryGetComponent(out Person person))
                 {
-                    if (person != GameController.Instance.Target)
+                    if (person != GameController.Instance.Target && GameController.Instance.GameMode == GameMode.Game)
                         StartCoroutine(DelayCoroutine(3, () => GameController.Instance.LoadEndGameScene(false)));
                     person.Die();
                 }
