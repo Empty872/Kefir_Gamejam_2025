@@ -10,12 +10,14 @@ namespace DefaultNamespace
     public class Aim : MonoBehaviour
     {
         [SerializeField] private int ammoCount;
+        public int AmmoCount => ammoCount;
         [SerializeField] private Environment environment;
         [SerializeField] private Image aimImage;
         [SerializeField] private AudioSource audioSource;
         private Vector3 shootPositionDelta;
         private bool isShooting = false;
         public static Aim Instance;
+        public event Action OnAmmoCountChanged;
 
         private void Awake()
         {
@@ -60,6 +62,7 @@ namespace DefaultNamespace
 
             isShooting = true;
             ammoCount -= 1;
+            OnAmmoCountChanged?.Invoke();
             if (Physics.Raycast(transform.position + shootPositionDelta, transform.forward, out var raycastHit)) ;
             {
                 var targetTransform = raycastHit.transform;
