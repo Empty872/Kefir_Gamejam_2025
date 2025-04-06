@@ -114,7 +114,7 @@ namespace DefaultNamespace
                 if (targetTransform is null)
                 {
                     if (ammoCount == 0)
-                        StartCoroutine(DelayCoroutine(3, () => SceneManager.LoadScene(SceneNames.LooseScene)));
+                        StartCoroutine(DelayCoroutine(3, () => GameController.Instance.LoadEndGameScene(false)));
                 }
                 else if (targetTransform.TryGetComponent(out Person person))
                 {
@@ -159,7 +159,7 @@ namespace DefaultNamespace
             aimImage.rectTransform.sizeDelta = new Vector2(1920, 1080);
             isShooting = false;
         }
-        
+
         private IEnumerator DelayCoroutine(float waitInSeconds, Action action)
         {
             yield return new WaitForSeconds(waitInSeconds);

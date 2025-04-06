@@ -63,7 +63,7 @@ public class GameController : MonoBehaviour
                 currentGameTime -= Time.deltaTime;
                 if (currentGameTime <= 0)
                 {
-                    StartCoroutine(DelayCoroutine(5, () => SceneManager.LoadScene(SceneNames.LooseScene)));
+                    StartCoroutine(DelayCoroutine(5, () => LoadEndGameScene(false)));
                     IsGameActive = false;
                 }
 
@@ -85,7 +85,7 @@ public class GameController : MonoBehaviour
                 {
                     youWin.Invoke();
                     Debug.Log("youWin");
-                    StartCoroutine(DelayCoroutine(5, () => SceneManager.LoadScene(SceneNames.WinScene)));
+                    StartCoroutine(DelayCoroutine(5, () => LoadEndGameScene(true)));
                 }
                 else
                 {
@@ -93,15 +93,30 @@ public class GameController : MonoBehaviour
                     youKilledAnother.Invoke();
                     currentGameTime -= 25;
                 }
+
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
         }
     }
+
     private IEnumerator DelayCoroutine(float waitInSeconds, Action action)
     {
         yield return new WaitForSeconds(waitInSeconds);
         action.Invoke();
+    }
+
+    public void LoadEndGameScene(bool isWinScene)
+    {
+        Cursor.visible = true;
+        if (isWinScene)
+        {
+            SceneManager.LoadScene(SceneNames.WinScene);
+        }
+        else
+        {
+            SceneManager.LoadScene(SceneNames.LooseScene);
+        }
     }
 }
 
