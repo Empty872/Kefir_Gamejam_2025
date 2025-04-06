@@ -21,7 +21,7 @@ namespace DefaultNamespace.UI
                     str = $"Подсказка: цель точно {UiHelper.GetHeightDescr(person.Data.Height)}";
                     break;
                 case StatementType.HairColor:
-                    str = $"Подсказка: цвет волос цели точно {UiHelper.GetHairDescr(person.Data.HairColor)}";
+                    str = $"Подсказка: wtkm njxyj{UiHelper.GetHairDescr(person.Data.HairColor)}";
                     break;
                 case StatementType.HatType:
                     str = $"Подсказка: цель точно {UiHelper.GetHatTypeDescr(person.Data.HatType)}";
