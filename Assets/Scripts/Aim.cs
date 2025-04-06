@@ -57,15 +57,24 @@ namespace DefaultNamespace
             }
             StartCoroutine(ScaleAim());
             audioSource.Play();
-            enabled = false;
+            // enabled = false;
         }
 
         private IEnumerator ScaleAim()
         {
-            var maxHeight = 40000;
-            while (aimImage.rectTransform.sizeDelta.y < maxHeight)
+            var increaseTime = 0.12f;
+            var decreaseTime = 0.2f;
+            while (increaseTime > 0)
             {
-                aimImage.rectTransform.sizeDelta *= 1.1f;
+                aimImage.rectTransform.sizeDelta *= 1.02f;
+                increaseTime -= 0.01f;
+                yield return new WaitForSeconds(0.01f);
+            }
+
+            while (decreaseTime > 0)
+            {
+                aimImage.rectTransform.sizeDelta /= 1.01f;
+                decreaseTime -= 0.01f;
                 yield return new WaitForSeconds(0.01f);
             }
         }
