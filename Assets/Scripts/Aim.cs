@@ -31,6 +31,11 @@ namespace DefaultNamespace
 
         private void Update()
         {
+            if (!GameController.Instance.IsGameActive)
+            {
+                return;
+            }
+
             Debug.DrawLine(transform.position + shootPositionDelta, transform.position + transform.forward * 100,
                 Color.blue);
 

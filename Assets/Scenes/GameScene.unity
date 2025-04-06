@@ -904,7 +904,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainUi: {fileID: 421405364}
-  hintDrawer: {fileID: 615474880}
+  hintDrawer: {fileID: 0}
 --- !u!1 &508195535
 GameObject:
   m_ObjectHideFlags: 0
