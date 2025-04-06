@@ -2,6 +2,7 @@
 using Orderer;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace DefaultNamespace.UI
 {
@@ -13,6 +14,7 @@ namespace DefaultNamespace.UI
         [SerializeField] private TMP_Text orderTargetChoseTypeText;
         [SerializeField] private TMP_Text ordererStatementChangesText;
         [SerializeField] private TMP_Text ordererIntStructText;
+        [SerializeField] private RectTransform parentRect;
         public void Draw(Orderer.Orderer orderer)
         {
             orderTargetChoseTypeText.text = UiHelper.GetOrderTargetChoseTypeText(orderer.OrderTargetChoseType);
@@ -30,6 +32,8 @@ namespace DefaultNamespace.UI
             statement1.text = statements[0].GetStatementString();
             statement2.text = statements[1].GetStatementString();
             statement3.text = statements[2].GetStatementString();
+            
+            LayoutRebuilder.ForceRebuildLayoutImmediate(parentRect);
         }
     }
 }
