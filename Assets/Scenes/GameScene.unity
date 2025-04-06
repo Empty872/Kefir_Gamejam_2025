@@ -2805,6 +2805,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67c6f76cf47304a419baf7e8c38700fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startGameTime: 5
   peopleCount: 3
   orderManager: {fileID: 421405365}
 --- !u!4 &1427763841

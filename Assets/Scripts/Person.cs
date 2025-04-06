@@ -28,14 +28,7 @@ public class Person : MonoBehaviour
 
     public void Die()
     {
-        if (GameController.Instance.Target == this)
-        {
-            Debug.Log("You Win");
-        }
-        else
-        {
-            Debug.Log("You Lose");
-        }
+        GameController.Instance.EndGame(GameController.Instance.Target == this);
 
         Destroy(gameObject);
     }
