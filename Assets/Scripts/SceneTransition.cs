@@ -9,5 +9,9 @@ namespace DefaultNamespace
         {
             SceneManager.LoadScene(SceneNames.GameScene);
         }
+        public void LoadTutorialScene()
+        {
+            SceneManager.LoadScene(SceneNames.TutorialScene);
+        }
     }
 }

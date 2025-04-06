@@ -3,12 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using AYellowpaper.SerializedCollections;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace DefaultNamespace
 {
     public class Aim : MonoBehaviour
     {
+        [SerializeField] private ParticleSystem dustParticleSystem;
         [SerializeField] private int maxAmmoCount;
         private int ammoCount;
         public int AmmoCount => ammoCount;
@@ -66,6 +68,7 @@ namespace DefaultNamespace
 
             isShooting = true;
             ammoCount -= 1;
+
             OnAmmoCountChanged?.Invoke();
             if (Physics.Raycast(transform.position + shootPositionDelta, transform.forward, out var raycastHit)) ;
             {
@@ -73,6 +76,7 @@ namespace DefaultNamespace
                 if (targetTransform is null)
                 {
                     Debug.Log("There is no anything");
+                    // Instantiate(dustParticleSystem.gameObject);
                 }
                 else if (targetTransform.TryGetComponent(out Person person))
                 {
@@ -81,6 +85,7 @@ namespace DefaultNamespace
                 else
                 {
                     Debug.Log("There is no person");
+                    Instantiate(dustParticleSystem.gameObject, raycastHit.point, Quaternion.identity);
                 }
             }
 
