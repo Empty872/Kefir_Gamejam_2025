@@ -35,8 +35,6 @@ namespace DefaultNamespace
 
         private void Environment_OnChanged(int windSpeed, int distance)
         {
-            Debug.Log(windSpeed);
-            Debug.Log(distance);
             shootPositionDelta.x = DataHolder.Instance.WindOffsetDictionary[windSpeed];
             shootPositionDelta.y = DataHolder.Instance.DistanceOffsetDictionary[distance];
         }

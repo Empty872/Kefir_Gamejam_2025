@@ -6,8 +6,8 @@ public class Environment : MonoBehaviour
 {
     [SerializeField] private float windChangePeriod;
     public static Environment Instance { get; private set; }
-    public int WindSpeed { get; private set; }
-    public int Distance { get; private set; }
+    public int WindSpeed { get; private set; } = 0;
+    public int Distance { get; private set; } = 50;
     public event Action<int, int> OnChanged;
 
     private void Awake()
@@ -50,11 +50,15 @@ public class Environment : MonoBehaviour
 
     public void SetWind(int wind)
     {
+        Debug.Log($"Wind set {wind}");
         WindSpeed = wind;
+        OnChanged?.Invoke(WindSpeed, Distance);
     }
     
     public void SetDistance(int distance)
     {
+        Debug.Log($"Distance set {distance}");
         Distance = distance;
+        OnChanged?.Invoke(WindSpeed, Distance);
     }
 }

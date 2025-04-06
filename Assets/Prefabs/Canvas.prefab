@@ -1211,8 +1211,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ordererDrawer1: {fileID: 703811115747816399}
   ordererDrawer2: {fileID: 8589259936857278133}
-  aimDrawer: {fileID: 8729140055029392913}
-  windDrawer: {fileID: 4624680365499434293}
   slider: {fileID: 1170237953681035440}
 --- !u!114 &785679406601001968
 MonoBehaviour:
@@ -2126,7 +2124,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b05457f909537384799a1c9bdc66bd08, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1bcfe47a51c5e684dbce78c92e88dd88, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

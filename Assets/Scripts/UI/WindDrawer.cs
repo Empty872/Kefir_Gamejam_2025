@@ -12,7 +12,7 @@ namespace DefaultNamespace.UI
         [SerializeField] private GameObject r2;
         [SerializeField] private GameObject r3;
         
-        public void Init()
+        public void Start()
         {
             Draw();
             Environment.Instance.OnChanged += InstanceOnOnChanged;
