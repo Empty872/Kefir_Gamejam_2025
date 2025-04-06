@@ -53,7 +53,7 @@ namespace DefaultNamespace
 
             Debug.DrawLine(transform.position + shootPositionDelta, transform.position + transform.forward * 100,
                 Color.blue);
-            if (Physics.Raycast(transform.position + shootPositionDelta, transform.forward, out var raycastHit)) ;
+            if (Physics.Raycast(transform.position, transform.forward, out var raycastHit)) ;
             {
                 var targetTransform = raycastHit.transform;
                 if (targetTransform is null)
