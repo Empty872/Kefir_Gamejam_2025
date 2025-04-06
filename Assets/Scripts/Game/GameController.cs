@@ -91,7 +91,7 @@ public class GameController : MonoBehaviour
                 {
                     Debug.Log("youKilledAnother");
                     youKilledAnother.Invoke();
-                    currentGameTime -= 20;
+                    currentGameTime -= 25;
                 }
                 break;
             default:

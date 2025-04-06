@@ -980,7 +980,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameMode: 1
-  startGameTime: 120
+  startGameTime: 90
   peopleCount: 8
   orderManager: {fileID: 421405365}
   youWin:

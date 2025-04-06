@@ -143,7 +143,23 @@ namespace Orderer
                     }
                     break;
                 case 3 :
-                    ordererIntStruct.OrderStatementType = OrderStatementType.AlwaysSaysTrue;
+                    
+                    var random3 = Random.Range(0f, 1f);
+                    if (random3 <= 0.6f)
+                    {
+                        ordererIntStruct.OrderStatementType = OrderStatementType.AlwaysSaysTrue;
+                        
+                    }
+                    else if (random3 <= 0.9f)
+                    {
+                        ordererIntStruct.OrderStatementType = OrderStatementType.XStatementsIsTrue;
+                        ordererIntStruct.X = 2;
+                    }
+                    else
+                    {
+                        ordererIntStruct.OrderStatementType = OrderStatementType.NumberXStatementIsTrue;
+                        ordererIntStruct.X = 2;
+                    }
                     break;
             }
         }

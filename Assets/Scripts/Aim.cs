@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using AYellowpaper.SerializedCollections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
@@ -112,8 +113,8 @@ namespace DefaultNamespace
                 var targetTransform = raycastHit.transform;
                 if (targetTransform is null)
                 {
-                    Debug.Log("There is no anything");
-                    // Instantiate(dustParticleSystem.gameObject);
+                    if (ammoCount == 0)
+                        StartCoroutine(DelayCoroutine(3, () => SceneManager.LoadScene(SceneNames.LooseScene)));
                 }
                 else if (targetTransform.TryGetComponent(out Person person))
                 {
@@ -121,8 +122,9 @@ namespace DefaultNamespace
                 }
                 else
                 {
-                    Debug.Log("There is no person");
                     Instantiate(dustParticleSystem.gameObject, raycastHit.point, Quaternion.identity);
+                    if (ammoCount == 0)
+                        StartCoroutine(DelayCoroutine(3, () => SceneManager.LoadScene(SceneNames.LooseScene)));
                 }
             }
 
@@ -156,6 +158,12 @@ namespace DefaultNamespace
 
             aimImage.rectTransform.sizeDelta = new Vector2(1920, 1080);
             isShooting = false;
+        }
+        
+        private IEnumerator DelayCoroutine(float waitInSeconds, Action action)
+        {
+            yield return new WaitForSeconds(waitInSeconds);
+            action.Invoke();
         }
     }
 }
