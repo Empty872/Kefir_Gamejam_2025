@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
+    [SerializeField] private GameMode gameMode;
+    public GameMode GameMode => gameMode;
     public bool IsGameActive { get; private set; } = true;
     [SerializeField] private float startGameTime;
     private float currentGameTime;
@@ -21,10 +23,19 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
-        var players = PeopleSpawner.Instance.SpawnPlayers(peopleCount);
-        Target = players.GetRandomElement();
-        orderManager.StartGame(Target);
-        currentGameTime = startGameTime;
+        switch (gameMode)
+        {
+            case GameMode.Tutorial:
+                break;
+            case GameMode.Game:
+                var players = PeopleSpawner.Instance.SpawnPlayers(peopleCount);
+                Target = players.GetRandomElement();
+                orderManager.StartGame(Target);
+                currentGameTime = startGameTime;
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
     }
 
     // Update is called once per frame
@@ -55,4 +66,10 @@ public class GameController : MonoBehaviour
 
         IsGameActive = false;
     }
+}
+
+public enum GameMode
+{
+    Tutorial,
+    Game
 }

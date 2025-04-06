@@ -744,6 +744,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f75fa82e567d6ee48aef02b602e17c0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  windChangePeriod: 0
 --- !u!4 &1048172755 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2263240649399634277, guid: 0a7e3565dc635bb4baf7620a7cdd380e, type: 3}
@@ -823,6 +824,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67c6f76cf47304a419baf7e8c38700fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameMode: 1
   startGameTime: 99999
   peopleCount: 8
   orderManager: {fileID: 421405365}
