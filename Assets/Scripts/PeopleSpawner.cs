@@ -30,7 +30,6 @@ public class PeopleSpawner : MonoBehaviour
                 Quaternion.identity).GetComponent<Person>();
             result.Add(instance);
         }
-
         return result;
     }
 }
