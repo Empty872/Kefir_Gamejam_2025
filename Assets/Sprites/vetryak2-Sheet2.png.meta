@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: bf44ad066770b154683c2eedaccefb38
+guid: 8e069bdb13952da42980572a8a1f127b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: blood2_0
+      name: vetryak2-Sheet2_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2f475835e518a54479d48f0cafb3febc
-      internalID: 147854349
+      spriteID: 628c55cdaea08cd42bc4f032987c0298
+      internalID: -703451577
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: blood2_1
+      name: vetryak2-Sheet2_1
       rect:
         serializedVersion: 2
         x: 32
@@ -145,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 125b40bfc02689a4eaf8117e540491c2
-      internalID: -989380254
+      spriteID: d08fdf74a36c87d4eada8ecdfb3bea49
+      internalID: -2088416966
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: blood2_2
+      name: vetryak2-Sheet2_2
       rect:
         serializedVersion: 2
         x: 64
@@ -166,14 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b23cdf953adbbd643a2c5e408106f724
-      internalID: 283133355
+      spriteID: 9de1ab04085bd154bb84949861d66b09
+      internalID: -736516572
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: blood2_3
+      name: vetryak2-Sheet2_3
       rect:
         serializedVersion: 2
         x: 96
@@ -187,14 +187,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cae941e022a09df458dc6aa2f5f43226
-      internalID: 1687650936
+      spriteID: 8ab8bd682270a434ca8c44196a54812e
+      internalID: 1996405008
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: blood2_4
+      name: vetryak2-Sheet2_4
       rect:
         serializedVersion: 2
         x: 128
@@ -208,14 +208,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d135a5003907a1640a887281db97c2a1
-      internalID: -1960715673
+      spriteID: 19b8e3f3fae937b46bc6fa0e24f989fd
+      internalID: -345320946
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: blood2_5
+      name: vetryak2-Sheet2_5
       rect:
         serializedVersion: 2
         x: 160
@@ -229,14 +229,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dc3d7c85910f54949ba1b755c39b280d
-      internalID: 99346249
+      spriteID: a18da319c6ee0904ea0a951ae751270f
+      internalID: 604685718
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: blood2_6
+      name: vetryak2-Sheet2_6
       rect:
         serializedVersion: 2
         x: 192
@@ -250,113 +250,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5c598c496052a6942913b1ea956acef8
-      internalID: -1036519700
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: blood2_7
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f602561af2626e543a50df39c4563575
-      internalID: 1088748543
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: blood2_8
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a37314a02cd8e2a449c597349f5679d7
-      internalID: 1234300269
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: blood2_9
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 659ce390acb994145a9bdc9689fe7c82
-      internalID: 659361205
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: blood2_10
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 42d45eb04a351004197afbad48f22b31
-      internalID: 678516137
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: blood2_11
-      rect:
-        serializedVersion: 2
-        x: 352
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b441fa2fa2f54ca4183adb2ae66b0e2d
-      internalID: 1475732430
+      spriteID: f60b41e68af6e87419c197412166208b
+      internalID: -725393772
       vertices: []
       indices: 
       edges: []
@@ -372,18 +267,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      blood2_0: 147854349
-      blood2_1: -989380254
-      blood2_10: 678516137
-      blood2_11: 1475732430
-      blood2_2: 283133355
-      blood2_3: 1687650936
-      blood2_4: -1960715673
-      blood2_5: 99346249
-      blood2_6: -1036519700
-      blood2_7: 1088748543
-      blood2_8: 1234300269
-      blood2_9: 659361205
+      vetryak2-Sheet2_0: -703451577
+      vetryak2-Sheet2_1: -2088416966
+      vetryak2-Sheet2_2: -736516572
+      vetryak2-Sheet2_3: 1996405008
+      vetryak2-Sheet2_4: -345320946
+      vetryak2-Sheet2_5: 604685718
+      vetryak2-Sheet2_6: -725393772
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

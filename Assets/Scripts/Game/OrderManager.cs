@@ -15,6 +15,7 @@ namespace Orderer
         private Person person;
         [SerializeField] private MainUi mainUi;
         [SerializeField] private HintDrawer hintDrawer;
+        private bool hintClicked;
         public void StartGame(Person person)
         {
             var types = GetRandomStatementTypes(6);
@@ -26,37 +27,46 @@ namespace Orderer
 
         private void Update()
         {
+            if (hintClicked) return;
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
                 hintDrawer.ChooseHint(StatementType.Height, person);
+                hintClicked = true;
             }
             if (Input.GetKeyDown(KeyCode.Alpha2))
             {
                 hintDrawer.ChooseHint(StatementType.HairColor, person);
+                hintClicked = true;
             }
             if (Input.GetKeyDown(KeyCode.Alpha3))
             {
                 hintDrawer.ChooseHint(StatementType.HatType, person);
+                hintClicked = true;
             }
             if (Input.GetKeyDown(KeyCode.Alpha4))
             {
                 hintDrawer.ChooseHint(StatementType.Sex, person);
+                hintClicked = true;
             }
             if (Input.GetKeyDown(KeyCode.Alpha5))
             {
                 hintDrawer.ChooseHint(StatementType.UpperColor, person);
+                hintClicked = true;
             }
             if (Input.GetKeyDown(KeyCode.Alpha6))
             {
                 hintDrawer.ChooseHint(StatementType.LowerColor, person);
+                hintClicked = true;
             }
             if (Input.GetKeyDown(KeyCode.Alpha7))
             {
                 hintDrawer.ChooseHint(StatementType.SkinColor, person);
+                hintClicked = true;
             }
             if (Input.GetKeyDown(KeyCode.Alpha8))
             {
                 hintDrawer.ChooseHint(StatementType.Age, person);
+                hintClicked = true;
             }
         }
 
