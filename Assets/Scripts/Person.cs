@@ -12,6 +12,8 @@ public class Person : MonoBehaviour
     private Animator animator;
     public PersonData Data => personData;
 
+    public event Action Died; 
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -38,6 +40,7 @@ public class Person : MonoBehaviour
     {
         GameController.Instance.EndGame(GameController.Instance.Target == this);
         animator.SetTrigger("Killed");
+        Died?.Invoke();
         // Destroy(gameObject);
     }
 }
