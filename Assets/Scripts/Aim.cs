@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
-using AYellowpaper.SerializedCollections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace DefaultNamespace
@@ -13,15 +10,24 @@ namespace DefaultNamespace
     {
         [SerializeField] private ParticleSystem dustParticleSystem;
         [SerializeField] private int maxAmmoCount;
-        private int ammoCount;
-        public int AmmoCount => ammoCount;
         [SerializeField] private Environment environment;
         [SerializeField] private Image aimImage;
         [SerializeField] private AudioSource audioSource;
+        private int ammoCount;
+        public int AmmoCount
+        {
+            get => ammoCount;
+            private set
+            {
+                ammoCount = value;
+                OnAmmoCountChanged?.Invoke();
+            }
+        }
         private Vector3 shootPositionDelta;
-        private bool isShooting = false;
-        public static Aim Instance;
+        private bool isShooting;
         private Person currentPerson;
+        public static Aim Instance;
+
         public event Action OnAmmoCountChanged;
         public event Action<Person> OnCharacterSelected;
         public event Action<Person> OnCharacterDeselected;
@@ -31,7 +37,7 @@ namespace DefaultNamespace
         private void Awake()
         {
             Instance = this;
-            ammoCount = maxAmmoCount;
+            AmmoCount = maxAmmoCount;
         }
 
         private void OnEnable()
@@ -52,8 +58,6 @@ namespace DefaultNamespace
                 return;
             }
 
-            Debug.DrawLine(transform.position + shootPositionDelta, transform.position + transform.forward * 100,
-                Color.blue);
             if (Physics.Raycast(transform.position, transform.forward, out var raycastHit)) ;
             {
                 var targetTransform = raycastHit.transform;
@@ -93,27 +97,25 @@ namespace DefaultNamespace
             }
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
-                Shoot();
+                TryShoot();
             }
         }
 
-        public void Shoot()
+        private void TryShoot()
         {
-            if (ammoCount == 0 || isShooting)
+            if (AmmoCount == 0 || isShooting)
             {
                 return;
             }
 
             isShooting = true;
-            ammoCount -= 1;
-
-            OnAmmoCountChanged?.Invoke();
+            AmmoCount -= 1;
             if (Physics.Raycast(transform.position + shootPositionDelta, transform.forward, out var raycastHit)) ;
             {
                 var targetTransform = raycastHit.transform;
                 if (targetTransform is null)
                 {
-                    if (ammoCount == 0)
+                    if (AmmoCount == 0)
                         StartCoroutine(DelayCoroutine(3, () => GameController.Instance.LoadEndGameScene(false)));
                 }
                 else if (targetTransform.TryGetComponent(out Person person))
@@ -123,7 +125,7 @@ namespace DefaultNamespace
                 else
                 {
                     Instantiate(dustParticleSystem.gameObject, raycastHit.point, Quaternion.identity);
-                    if (ammoCount == 0)
+                    if (AmmoCount == 0)
                         StartCoroutine(DelayCoroutine(3, () => SceneManager.LoadScene(SceneNames.LooseScene)));
                 }
             }
