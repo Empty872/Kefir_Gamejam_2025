@@ -19,6 +19,7 @@ public class DataHolder : MonoBehaviour
     public Dictionary<int, float> DistanceCameraSizeDictionary { get; private set; } = new()
         { { 200, 5 }, { 150, 6.7f }, { 100, 8.3f }, { 50, 10 } };
     public List<Person> Players => dataHolderSO.People;
+    public List<Person> Shahids => dataHolderSO.Shahids;
     public List<int> PossibleWindSpeeds => dataHolderSO.PossibleWindSpeeds;
     public List<int> PossibleDistances => dataHolderSO.PossibleDistances;
 }
