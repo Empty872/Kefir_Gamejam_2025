@@ -9,7 +9,8 @@ namespace DefaultNamespace
 {
     public class Aim : MonoBehaviour
     {
-        [SerializeField] private int ammoCount;
+        [SerializeField] private int maxAmmoCount;
+        private int ammoCount;
         public int AmmoCount => ammoCount;
         [SerializeField] private Environment environment;
         [SerializeField] private Image aimImage;
@@ -19,9 +20,12 @@ namespace DefaultNamespace
         public static Aim Instance;
         public event Action OnAmmoCountChanged;
 
+        public int MaxAmmoCount => maxAmmoCount;
+
         private void Awake()
         {
             Instance = this;
+            ammoCount = maxAmmoCount;
         }
 
         private void OnEnable()
