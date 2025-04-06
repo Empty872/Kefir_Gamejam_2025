@@ -63,7 +63,7 @@ public class GameController : MonoBehaviour
                 currentGameTime -= Time.deltaTime;
                 if (currentGameTime <= 0)
                 {
-                    StartCoroutine(DelayCoroutine(5, () => SceneManager.LoadScene(SceneNames.GameScene)));
+                    StartCoroutine(DelayCoroutine(5, () => SceneManager.LoadScene(SceneNames.LooseScene)));
                     IsGameActive = false;
                 }
 
@@ -85,7 +85,7 @@ public class GameController : MonoBehaviour
                 {
                     youWin.Invoke();
                     Debug.Log("youWin");
-                    StartCoroutine(DelayCoroutine(5, () => SceneManager.LoadScene(SceneNames.GameScene)));
+                    StartCoroutine(DelayCoroutine(5, () => SceneManager.LoadScene(SceneNames.WinScene)));
                 }
                 else
                 {
