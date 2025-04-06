@@ -20,7 +20,10 @@ namespace DefaultNamespace
         private Vector3 shootPositionDelta;
         private bool isShooting = false;
         public static Aim Instance;
+        private Person currentPerson;
         public event Action OnAmmoCountChanged;
+        public event Action<Person> OnCharacterSelected;
+        public event Action<Person> OnCharacterDeselected;
 
         public int MaxAmmoCount => maxAmmoCount;
 
@@ -50,7 +53,43 @@ namespace DefaultNamespace
 
             Debug.DrawLine(transform.position + shootPositionDelta, transform.position + transform.forward * 100,
                 Color.blue);
+            if (Physics.Raycast(transform.position + shootPositionDelta, transform.forward, out var raycastHit)) ;
+            {
+                var targetTransform = raycastHit.transform;
+                if (targetTransform is null)
+                {
+                    if (currentPerson != null)
+                    {
+                        OnCharacterDeselected?.Invoke(currentPerson);
+                        Debug.Log($"Deselected {currentPerson}");
+                        currentPerson = null;
+                    }
+                }
+                else if (targetTransform.TryGetComponent(out Person person))
+                {
+                    if (currentPerson != person)
+                    {
+                        OnCharacterSelected?.Invoke(person);
+                        Debug.Log($"Selected {person}");
+                        if (currentPerson != null)
+                        {
+                            OnCharacterDeselected?.Invoke(currentPerson);
+                            Debug.Log($"Deselected {currentPerson}");
+                        }
 
+                        currentPerson = person;
+                    }
+                }
+                else
+                {
+                    if (currentPerson != null)
+                    {
+                        OnCharacterDeselected?.Invoke(currentPerson);
+                        Debug.Log($"Deselected {currentPerson}");
+                        currentPerson = null;
+                    }
+                }
+            }
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 Shoot();
