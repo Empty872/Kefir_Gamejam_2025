@@ -14,10 +14,6 @@ public class PeopleSpawner : MonoBehaviour
         Instance = this;
     }
 
-    private void Start()
-    {
-        // SpawnPlayers(peopleCount);
-    }
 
     public List<Person> SpawnPlayers(int count)
     {

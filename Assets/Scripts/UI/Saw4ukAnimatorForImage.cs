@@ -11,7 +11,7 @@ namespace DefaultNamespace.UI
         [SerializeField] private List<Sprite> sprites;
         [SerializeField] private float secondsBetweenSprites;
 
-        private int cadrNumber = 0;
+        private int cadrNumber;
 
         private void OnEnable()
         {

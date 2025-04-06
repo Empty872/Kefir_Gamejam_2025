@@ -269,7 +269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b01aff066b647bf97b632ec32702a22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dustParticleSystem: {fileID: 0}
+  dustParticleSystem: {fileID: 198054064319151800, guid: 8b31796ffe025f940a5501ce7d2c8759, type: 3}
   maxAmmoCount: 50
   environment: {fileID: 1005960562}
   aimImage: {fileID: 775478691}
@@ -1759,6 +1759,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3433083169863198659}
   - component: {fileID: 2060655527426019592}
+  - component: {fileID: 5926573272503990112}
   m_Layer: 0
   m_Name: Map
   m_TagString: Untagged
@@ -1766,6 +1767,27 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &5926573272503990112
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5926573272503990111}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 8.96, y: 9.28, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &6044912431294292985
 Transform:
   m_ObjectHideFlags: 0

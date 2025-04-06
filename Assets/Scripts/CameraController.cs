@@ -34,11 +34,6 @@ public class CameraController : MonoBehaviour
     {
         var input = Vector3.zero;
         var currentMousePosition = Input.mousePosition;
-        // if (Input.GetKey(KeyCode.Escape))
-        // {
-        //     Cursor.visible = !Cursor.visible;
-        // }
-
         input += currentMousePosition - previousMousePosition;
         var delta = input * speed * Time.deltaTime;
         var newPosition = transform.position + delta;

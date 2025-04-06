@@ -41,7 +41,6 @@ public class Person : MonoBehaviour
         GameController.Instance.SomeoneWasKilled(GameController.Instance.Target == this);
         animator.SetTrigger("Killed");
         StartCoroutine(DelayCoroutine(1f, () => Died?.Invoke()));
-        // Destroy(gameObject);
     }
     
     private IEnumerator DelayCoroutine(float waitInSeconds, Action action)
