@@ -16,6 +16,10 @@ public class GameController : MonoBehaviour
     public static GameController Instance;
     public Person Target { get; private set; }
 
+    public float StartGameTime => startGameTime;
+
+    public float CurrentGameTime => currentGameTime;
+
     private void Awake()
     {
         Instance = this;

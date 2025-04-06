@@ -1,5 +1,7 @@
-﻿using TMPro;
+﻿using System;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 namespace DefaultNamespace.UI
@@ -10,6 +12,7 @@ namespace DefaultNamespace.UI
         [SerializeField] private OrdererDrawer ordererDrawer2;
         [SerializeField] private AimDrawer aimDrawer;
         [SerializeField] private WindDrawer windDrawer;
+        [SerializeField] private Slider slider;
 
         public void DrawUI(Orderer.Orderer orderer1, Orderer.Orderer orderer2)
         {
@@ -17,6 +20,11 @@ namespace DefaultNamespace.UI
             ordererDrawer2.Draw(orderer2);
             aimDrawer.Init();
             windDrawer.Init();
+        }
+
+        private void Update()
+        {
+            slider.value = GameController.Instance.CurrentGameTime / GameController.Instance.StartGameTime;
         }
     }
 }

@@ -1159,7 +1159,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1675074267485793736, guid: 5b7704b88993ee44f9ca47e665d26758, type: 3}
       propertyPath: m_Name
-      value: Canvas Variant
+      value: IraqUI
       objectReference: {fileID: 0}
     - target: {fileID: 1728026845303657229, guid: 5b7704b88993ee44f9ca47e665d26758, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1184,6 +1184,14 @@ PrefabInstance:
     - target: {fileID: 1728026845303657229, guid: 5b7704b88993ee44f9ca47e665d26758, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -437.95502
+      objectReference: {fileID: 0}
+    - target: {fileID: 1769446080483289230, guid: 5b7704b88993ee44f9ca47e665d26758, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1769446080483289230, guid: 5b7704b88993ee44f9ca47e665d26758, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1939285421191779245, guid: 5b7704b88993ee44f9ca47e665d26758, type: 3}
       propertyPath: m_IsActive
@@ -1326,6 +1334,10 @@ PrefabInstance:
       value: -392.945
       objectReference: {fileID: 0}
     - target: {fileID: 3792093489864502241, guid: 5b7704b88993ee44f9ca47e665d26758, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3907995544030787160, guid: 5b7704b88993ee44f9ca47e665d26758, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
