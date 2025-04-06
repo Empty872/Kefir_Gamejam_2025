@@ -24,6 +24,7 @@ namespace Orderer
         {
             StopAllCoroutines();
             StartCoroutine(WritingTextCoroutine(text));
+            
         }
 
         private IEnumerator WritingTextCoroutine(string text)
