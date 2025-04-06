@@ -22,8 +22,20 @@ public class Environment : MonoBehaviour
 
     private void SetRandomParametersAtStart()
     {
-        Distance = DataHolder.Instance.PossibleDistances.GetRandomElement();
-        StartCoroutine(ChangeWindSpeedPeriodically(windChangePeriod));
+        switch (GameController.Instance.GameMode)
+        {
+            case GameMode.Tutorial:
+                Distance = 50;
+                WindSpeed = 0;
+                OnChanged?.Invoke(WindSpeed, Distance);
+                break;
+            case GameMode.Game:
+                Distance = DataHolder.Instance.PossibleDistances.GetRandomElement();
+                StartCoroutine(ChangeWindSpeedPeriodically(windChangePeriod));
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
     }
 
     private IEnumerator ChangeWindSpeedPeriodically(float period)

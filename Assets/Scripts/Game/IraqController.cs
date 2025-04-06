@@ -34,7 +34,7 @@ namespace Orderer
             }
         }
 
-        private void Awake()
+        private void Start()
         {
             foreach (var shahid in shahids)
             {
