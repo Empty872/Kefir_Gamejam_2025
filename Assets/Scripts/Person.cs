@@ -40,7 +40,13 @@ public class Person : MonoBehaviour
     {
         GameController.Instance.SomeoneWasKilled(GameController.Instance.Target == this);
         animator.SetTrigger("Killed");
-        Died?.Invoke();
+        StartCoroutine(DelayCoroutine(1f, () => Died?.Invoke()));
         // Destroy(gameObject);
+    }
+    
+    private IEnumerator DelayCoroutine(float waitInSeconds, Action action)
+    {
+        yield return new WaitForSeconds(waitInSeconds);
+        action.Invoke();
     }
 }
