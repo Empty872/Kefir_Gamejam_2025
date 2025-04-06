@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b01aff066b647bf97b632ec32702a22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxAmmoCount: 5
+  maxAmmoCount: 50
   environment: {fileID: 1005960562}
   aimImage: {fileID: 775478691}
   audioSource: {fileID: 99085837}
@@ -931,7 +931,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameMode: 0
   startGameTime: 99999
-  peopleCount: 5
+  peopleCount: 50
   orderManager: {fileID: 1926561934}
 --- !u!4 &1427763841
 Transform:
@@ -1024,6 +1024,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1481083130965125631, guid: f5e0ac7f750702847906dc5bd9c9f267, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.5111758
+      objectReference: {fileID: 0}
+    - target: {fileID: 1481083130965125631, guid: f5e0ac7f750702847906dc5bd9c9f267, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.8113208
+      objectReference: {fileID: 0}
+    - target: {fileID: 1481083130965125631, guid: f5e0ac7f750702847906dc5bd9c9f267, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.11098258
+      objectReference: {fileID: 0}
     - target: {fileID: 1925587655209344660, guid: f5e0ac7f750702847906dc5bd9c9f267, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
