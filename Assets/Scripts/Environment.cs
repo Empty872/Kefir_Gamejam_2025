@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Environment : MonoBehaviour
 {
-    private float windChangePeriod = 15f;
+    [SerializeField] private float windChangePeriod;
     public static Environment Instance { get; private set; }
     public int WindSpeed { get; private set; }
     public int Distance { get; private set; }
@@ -34,5 +34,15 @@ public class Environment : MonoBehaviour
             OnChanged?.Invoke(WindSpeed, Distance);
             yield return new WaitForSeconds(period);
         }
+    }
+
+    public void SetWind(int wind)
+    {
+        WindSpeed = wind;
+    }
+    
+    public void SetDistance(int distance)
+    {
+        Distance = distance;
     }
 }
