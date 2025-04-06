@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PeopleSpawner : MonoBehaviour
 {
-    [SerializeField] private int peopleCount;
+    // [SerializeField] private int peopleCount;
     [SerializeField] private List<Transform> spawnPoints;
     public static PeopleSpawner Instance;
 
