@@ -13,8 +13,9 @@ namespace DefaultNamespace.UI
 
         private int cadrNumber = 0;
 
-        private void Awake()
+        private void OnEnable()
         {
+            StopAllCoroutines();
             StartCoroutine(Coroutine());
         }
 

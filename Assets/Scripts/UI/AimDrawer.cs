@@ -10,7 +10,7 @@ namespace DefaultNamespace.UI
 
         public void Init()
         {
-            distanceText.text = $"D -- {Environment.Instance.Distance}";
+            distanceText.text = $"D-{Environment.Instance.Distance}m";
             ammoText.text = $"{Aim.Instance.AmmoCount.ToString()}/{Aim.Instance.MaxAmmoCount.ToString()}";
             Aim.Instance.OnAmmoCountChanged += InstanceOnOnAmmoCountChanged;
         }
