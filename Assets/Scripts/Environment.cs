@@ -1,8 +1,10 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class Environment : MonoBehaviour
 {
+    private float windChangePeriod = 15f;
     public static Environment Instance { get; private set; }
     public int WindSpeed { get; private set; }
     public int Distance { get; private set; }
@@ -15,14 +17,22 @@ public class Environment : MonoBehaviour
 
     private void Start()
     {
-        SetRandomParameters();
+        SetRandomParametersAtStart();
     }
 
-    private void SetRandomParameters()
+    private void SetRandomParametersAtStart()
     {
-        // WindSpeed = 0;
-        WindSpeed = DataHolder.Instance.PossibleWindSpeeds.GetRandomElement();
         Distance = DataHolder.Instance.PossibleDistances.GetRandomElement();
-        OnChanged?.Invoke(WindSpeed, Distance);
+        StartCoroutine(ChangeWindSpeedPeriodically(windChangePeriod));
+    }
+
+    private IEnumerator ChangeWindSpeedPeriodically(float period)
+    {
+        while (true)
+        {
+            WindSpeed = DataHolder.Instance.PossibleWindSpeeds.GetRandomElement();
+            OnChanged?.Invoke(WindSpeed, Distance);
+            yield return new WaitForSeconds(period);
+        }
     }
 }

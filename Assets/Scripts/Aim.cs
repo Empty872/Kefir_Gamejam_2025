@@ -15,6 +15,12 @@ namespace DefaultNamespace
         [SerializeField] private AudioSource audioSource;
         private Vector3 shootPositionDelta;
         private bool isShooting = false;
+        public static Aim Instance;
+
+        private void Awake()
+        {
+            Instance = this;
+        }
 
         private void OnEnable()
         {
