@@ -53,40 +53,32 @@ namespace Orderer
             }
         }
 
-        public void SetFalse(Person person)
+        public int GetFalse(Person person)
         {
             switch (statementType)
             {
                 case StatementType.Height:
-                    value = ChangeValueToFalse(0, 2, (int)person.Data.Height);
-                    break;
+                    return GetFalseValue(0, 2, (int)person.Data.Height);
                 case StatementType.HairColor:
-                    value = ChangeValueToFalse(0, 4, (int)person.Data.HairColor);
-                    break;
+                    return GetFalseValue(0, 4, (int)person.Data.HairColor);
                 case StatementType.HatType:
-                    value = ChangeValueToFalse(0, 2, (int)person.Data.HatType);
-                    break;
+                    return GetFalseValue(0, 2, (int)person.Data.HatType);
                 case StatementType.Sex:
-                    value = person.Data.Sex == Sex.Male ? (int)Sex.Female : (int)Sex.Male;
-                    break;
+                    return person.Data.Sex == Sex.Male ? (int)Sex.Female : (int)Sex.Male;
                 case StatementType.LowerColor:
-                    ChangeValueToFalse(0, 7, (int)person.Data.HairColor);
-                    break;
+                    return GetFalseValue(0, 7, (int)person.Data.HairColor);
                 case StatementType.UpperColor:
-                    ChangeValueToFalse(0, 7, (int)person.Data.HairColor);
-                    break;
+                    return GetFalseValue(0, 7, (int)person.Data.HairColor);
                 case StatementType.SkinColor:
-                    value = person.Data.SkinColor == SkinColor.Black ? (int)SkinColor.White  : (int)SkinColor.Black ;
-                    break;
+                    return person.Data.SkinColor == SkinColor.Black ? (int)SkinColor.White  : (int)SkinColor.Black ;
                 case StatementType.Age:
-                    value = person.Data.Age == Age.Normal ? (int)Age.Old: (int)Age.Normal;
-                    break;
+                    return person.Data.Age == Age.Normal ? (int)Age.Old: (int)Age.Normal;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
         }
 
-        private int ChangeValueToFalse(int start, int end, int value)
+        private int GetFalseValue(int start, int end, int value)
         {
             var val = Random.Range(start, end);
             if (val == value)

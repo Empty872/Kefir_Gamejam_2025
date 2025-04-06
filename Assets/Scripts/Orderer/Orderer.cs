@@ -89,13 +89,20 @@ namespace Orderer
         {
             foreach (var statement in statements)
             {
-                if (!statement.IsTrueForPerson(person) && Random.Range(0f,1f) <= 1f)
+                if (!(Random.Range(0f, 1f) <= 0.4f)) continue;
+                if (!statement.IsTrueForPerson(person))
                 {
                     ordererStatementChanges.Type = statement.StatementType;
                     ordererStatementChanges.XValue = person.GetStatementValue(statement.StatementType);
-                    ordererStatementChanges.YValue = statement.Value;
-                    return;
+                    ordererStatementChanges.YValue = statement.Value; 
                 }
+                else
+                {
+                    ordererStatementChanges.Type = statement.StatementType;
+                    ordererStatementChanges.XValue = statement.GetFalse(person);
+                    ordererStatementChanges.YValue = person.GetStatementValue(statement.StatementType); 
+                }
+                return;
             }
         }
 
@@ -115,7 +122,7 @@ namespace Orderer
                         ordererIntStruct.OrderStatementType = OrderStatementType.NumberXStatementIsTrue;
                         ordererIntStruct.X = statements.IndexOf(statements.First(x => x.IsTrueForPerson(person)));
                     }
-                    else
+                    else if (random <= 0.75f)
                     {
                         ordererIntStruct.OrderStatementType = OrderStatementType.Xof3StatementsIsCorrect;
                         ordererIntStruct.X = 1;
