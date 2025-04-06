@@ -83,6 +83,7 @@ namespace Orderer
         {
             yield return new WaitForSeconds(waitInSeconds);
             action.Invoke();
+            PlayerPrefs.SetInt("TutorialCompleted", 1);
         }
     }
 }
