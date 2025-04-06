@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b01aff066b647bf97b632ec32702a22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dustParticleSystem: {fileID: 0}
+  dustParticleSystem: {fileID: 198054064319151800, guid: 8b31796ffe025f940a5501ce7d2c8759, type: 3}
   maxAmmoCount: 5
   environment: {fileID: 1005960562}
   aimImage: {fileID: 1745853643}
@@ -691,6 +691,32 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6482142955008108703, guid: 0a7e3565dc635bb4baf7620a7cdd380e, type: 3}
   m_PrefabInstance: {fileID: 4757956662710008461}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &937069161 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7282696543966773176, guid: a0a4ec91fc17a134e97b94f61e3fd8c7, type: 3}
+  m_PrefabInstance: {fileID: 3976184886564620519}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &937069164
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 937069161}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 25.089266, y: 14.86, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &978484793 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5273335996911090690, guid: 0a7e3565dc635bb4baf7620a7cdd380e, type: 3}
@@ -1497,7 +1523,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7282696543966773176, guid: a0a4ec91fc17a134e97b94f61e3fd8c7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 937069164}
   m_SourcePrefab: {fileID: 100100000, guid: a0a4ec91fc17a134e97b94f61e3fd8c7, type: 3}
 --- !u!1001 &4757956662710008461
 PrefabInstance:
