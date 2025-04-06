@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using AYellowpaper.SerializedCollections;
 using UnityEngine;
@@ -8,10 +9,12 @@ namespace DefaultNamespace
 {
     public class Aim : MonoBehaviour
     {
+        [SerializeField] private int ammoCount;
         [SerializeField] private Environment environment;
         [SerializeField] private Image aimImage;
         [SerializeField] private AudioSource audioSource;
         private Vector3 shootPositionDelta;
+        private bool isShooting = false;
 
         private void OnEnable()
         {
@@ -39,6 +42,13 @@ namespace DefaultNamespace
 
         public void Shoot()
         {
+            if (ammoCount == 0 || isShooting)
+            {
+                return;
+            }
+
+            isShooting = true;
+            ammoCount -= 1;
             if (Physics.Raycast(transform.position + shootPositionDelta, transform.forward, out var raycastHit)) ;
             {
                 var targetTransform = raycastHit.transform;
@@ -55,13 +65,14 @@ namespace DefaultNamespace
                     Debug.Log("There is no person");
                 }
             }
+
             StartCoroutine(ScaleAim());
             audioSource.Play();
-            // enabled = false;
         }
 
         private IEnumerator ScaleAim()
         {
+            var startSize = aimImage.rectTransform.sizeDelta.x;
             var increaseTime = 0.12f;
             var decreaseTime = 0.2f;
             while (increaseTime > 0)
@@ -71,12 +82,20 @@ namespace DefaultNamespace
                 yield return new WaitForSeconds(0.01f);
             }
 
+            var divider = decreaseTime / 0.01f;
+            var currentSIze = aimImage.rectTransform.sizeDelta.x;
+            var a = currentSIze / startSize;
+
+            var modifier = Math.Pow(a, 1 / divider);
             while (decreaseTime > 0)
             {
-                aimImage.rectTransform.sizeDelta /= 1.01f;
+                aimImage.rectTransform.sizeDelta /= (float)modifier;
                 decreaseTime -= 0.01f;
                 yield return new WaitForSeconds(0.01f);
             }
+
+            aimImage.rectTransform.sizeDelta = new Vector2(1920, 1080);
+            isShooting = false;
         }
     }
 }
