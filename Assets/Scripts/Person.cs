@@ -1,13 +1,21 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Charcter;
 using Orderer;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Person : MonoBehaviour
 {
     [SerializeField] private PersonData personData;
+    private Animator animator;
     public PersonData Data => personData;
+
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     public int GetStatementValue(StatementType statementType)
     {
@@ -28,15 +36,8 @@ public class Person : MonoBehaviour
 
     public void Die()
     {
-        if (GameController.Instance.Target == this)
-        {
-            Debug.Log("You Win");
-        }
-        else
-        {
-            Debug.Log("You Lose");
-        }
-
-        Destroy(gameObject);
+        GameController.Instance.EndGame(GameController.Instance.Target == this);
+        animator.SetTrigger("Killed");
+        // Destroy(gameObject);
     }
 }
