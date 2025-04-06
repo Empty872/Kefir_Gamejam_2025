@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Orderer;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -19,6 +21,9 @@ public class GameController : MonoBehaviour
     public float StartGameTime => startGameTime;
 
     public float CurrentGameTime => currentGameTime;
+
+    public UnityEvent youWin;
+    public UnityEvent youKilledAnother;
 
     private void Awake()
     {
@@ -58,7 +63,8 @@ public class GameController : MonoBehaviour
                 currentGameTime -= Time.deltaTime;
                 if (currentGameTime <= 0)
                 {
-                    SomeoneWasKilled(false);
+                    StartCoroutine(DelayCoroutine(5, () => SceneManager.LoadScene(SceneNames.GameScene)));
+                    IsGameActive = false;
                 }
 
                 break;
@@ -69,26 +75,33 @@ public class GameController : MonoBehaviour
 
     public void SomeoneWasKilled(bool isWin)
     {
+        Debug.Log("SomeoneWasKilled");
         switch (gameMode)
         {
             case GameMode.Tutorial:
-                Debug.Log("You eliminated target");
                 break;
             case GameMode.Game:
                 if (isWin)
                 {
-                    Debug.Log("You Win");
+                    youWin.Invoke();
+                    Debug.Log("youWin");
+                    StartCoroutine(DelayCoroutine(5, () => SceneManager.LoadScene(SceneNames.GameScene)));
                 }
                 else
                 {
-                    Debug.Log("You Lose");
+                    Debug.Log("youKilledAnother");
+                    youKilledAnother.Invoke();
+                    currentGameTime -= 20;
                 }
-
-                IsGameActive = false;
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
         }
+    }
+    private IEnumerator DelayCoroutine(float waitInSeconds, Action action)
+    {
+        yield return new WaitForSeconds(waitInSeconds);
+        action.Invoke();
     }
 }
 

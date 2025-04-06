@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &92845606 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6427234068465394353, guid: f5e0ac7f750702847906dc5bd9c9f267, type: 3}
+  m_PrefabInstance: {fileID: 1926561933}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &99085833
 GameObject:
   m_ObjectHideFlags: 0
@@ -900,6 +905,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2328774f34092144b8c9881214ec308, type: 3}
+--- !u!1 &1404773226 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7059221935861879744, guid: f5e0ac7f750702847906dc5bd9c9f267, type: 3}
+  m_PrefabInstance: {fileID: 1926561933}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1427763839
 GameObject:
   m_ObjectHideFlags: 0
@@ -933,6 +943,36 @@ MonoBehaviour:
   startGameTime: 99999
   peopleCount: 50
   orderManager: {fileID: 1926561934}
+  youWin:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1404773226}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  youKilledAnother:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 92845606}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!4 &1427763841
 Transform:
   m_ObjectHideFlags: 0
