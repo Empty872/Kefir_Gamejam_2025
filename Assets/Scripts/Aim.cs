@@ -126,7 +126,7 @@ namespace DefaultNamespace
                 {
                     Instantiate(dustParticleSystem.gameObject, raycastHit.point, Quaternion.identity);
                     if (AmmoCount == 0)
-                        StartCoroutine(DelayCoroutine(3, () => SceneManager.LoadScene(SceneNames.LooseScene)));
+                        StartCoroutine(DelayCoroutine(3, () => GameController.Instance.LoadEndGameScene(false)));
                 }
             }
 
