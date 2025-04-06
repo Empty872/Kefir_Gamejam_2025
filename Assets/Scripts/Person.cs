@@ -38,7 +38,7 @@ public class Person : MonoBehaviour
 
     public void Die()
     {
-        GameController.Instance.EndGame(GameController.Instance.Target == this);
+        GameController.Instance.SomeoneWasKilled(GameController.Instance.Target == this);
         animator.SetTrigger("Killed");
         Died?.Invoke();
         // Destroy(gameObject);

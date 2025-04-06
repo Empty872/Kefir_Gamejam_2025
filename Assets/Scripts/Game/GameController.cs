@@ -50,25 +50,45 @@ public class GameController : MonoBehaviour
             return;
         }
 
-        currentGameTime -= Time.deltaTime;
-        if (currentGameTime <= 0)
+        switch (gameMode)
         {
-            EndGame(false);
+            case GameMode.Tutorial:
+                break;
+            case GameMode.Game:
+                currentGameTime -= Time.deltaTime;
+                if (currentGameTime <= 0)
+                {
+                    SomeoneWasKilled(false);
+                }
+
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
         }
     }
 
-    public void EndGame(bool isWin)
+    public void SomeoneWasKilled(bool isWin)
     {
-        if (isWin)
+        switch (gameMode)
         {
-            Debug.Log("You Win");
-        }
-        else
-        {
-            Debug.Log("You Lose");
-        }
+            case GameMode.Tutorial:
+                Debug.Log("You eliminated target");
+                break;
+            case GameMode.Game:
+                if (isWin)
+                {
+                    Debug.Log("You Win");
+                }
+                else
+                {
+                    Debug.Log("You Lose");
+                }
 
-        IsGameActive = false;
+                IsGameActive = false;
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
     }
 }
 
